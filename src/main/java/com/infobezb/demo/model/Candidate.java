@@ -15,9 +15,9 @@ public class Candidate {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    @Column(name = "name")
-    String name;
+    String firstName;
 
-    @Column(name = "number_of_votes")
+    String lastName;
+
     Long numberOfVotes;
 }
