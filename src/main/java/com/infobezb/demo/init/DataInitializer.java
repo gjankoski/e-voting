@@ -15,6 +15,7 @@ public class DataInitializer {
     @PostConstruct
     void init() {
         this.userService.register("testuser", "testpassword", "testemail@gmail.com");
+        this.userService.register("Vladimir", "vladimir", "2101999333021");
     }
 
 }
