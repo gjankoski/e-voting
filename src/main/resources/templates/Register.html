@@ -66,15 +66,18 @@
 
     </style>
 
-
     <!-- Custom styles for this template -->
 </head>
 <body class="text-center">
 
 <main class="form-signin">
     <form>
-        <h1 class="h3 mb-3 fw-normal">Ве молиме најавете се</h1>
+        <h1 class="h3 mb-3 fw-normal">Регистрирај се</h1>
+        <div class="form-floating">
+            <input type="email" class="form-control" id="e-mail" placeholder="t@example.something" aria-describedby="emailHelp">
+            <label for="floatingInput" >Корисничка сметка</label>
 
+        </div>
         <div class="form-floating">
             <input type="text" class="form-control" id="floatingInput" placeholder="172389182937">
             <label for="floatingInput">Корисничко име</label>
@@ -83,14 +86,17 @@
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Лозинка</label>
         </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword2" placeholder="Password">
+            <label for="floatingPassword">Потврди лозинка</label>
+        </div>
 
         <div class="checkbox mb-3">
             <label>
                 <input type="checkbox" value="remember-me"> Запамети ме
             </label>
         </div>
-        <a class="w-100 btn btn-lg btn-primary" href="getSertificate.html" type="submit">Најави се</a>
-        <a href="Register.html">Нов корисник/Регистрирај се</a>
+        <button class="w-100 btn btn-lg btn-primary" id="myButton" type="submit">Најави се</button>
     </form>
 </main>
 
