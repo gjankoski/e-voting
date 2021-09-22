@@ -50,4 +50,12 @@ public class User implements UserDetails {
         this.role = role;
         this.email = email;
     }
+
+    public boolean getDidVote() {
+        return didVote;
+    }
+
+    public void setDidVote(boolean didVote) {
+        this.didVote = didVote;
+    }
 }

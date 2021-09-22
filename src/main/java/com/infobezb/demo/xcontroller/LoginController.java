@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("/auth")
+@RequestMapping
 public class LoginController {
 
     @GetMapping("/login")
@@ -17,6 +17,6 @@ public class LoginController {
     @GetMapping("/logout")
     public String getLogout(HttpServletRequest request) {
         request.getSession().invalidate();
-        return "redirect:/auth/login";
+        return "redirect:/login";
     }
 }

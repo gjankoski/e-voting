@@ -31,6 +31,7 @@ public class DataInitializer {
         this.userService.register("Teofil", "1234pass", "t.budoski@hotmail.com");
         this.userService.register("Bojan", "1234pass", "t.budoski@hotmail.com");
         candidateRepository.save(new Candidate(1L, "try", "try", 10L));
+        candidateRepository.save(new Candidate(2L, "Try1", "try", 11L));
     }
 
 }

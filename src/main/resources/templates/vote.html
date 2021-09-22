@@ -20,28 +20,18 @@
 <div class="container pt-5">
     <h3 mt-5> Изберете го вашиот кандидат </h3>
     <div class="row pt-5"></div>
-    <div class="row pt-5">
-        <div class="col-4">
-            <img src="kandidat1", id="kandidat1" class="img-thumbnail">
-            <div class="form-check d-flex justify-content-center">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio1">
+    <form class="row pt-5" action="/voting" method="POST">
+        <th:block th:each="c: ${candidate}">
+            <div class="col-4">
+                <label th:text="${c.getFirstName()}"></label>
+                <div class="form-check d-flex justify-content-center">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio1" th:value="${c.getId()}">
+                </div>
             </div>
-        </div>
-        <div class="col-4">
-            <img src="kandidat2", id="kandidat2" class="img-thumbnail">
-            <div class="form-check d-flex justify-content-center">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio2">
-            </div>
-        </div>
-        <div class="col-4">
-            <img src="kandidat3", id="kandidat3" class="img-thumbnail">
-            <div class="form-check d-flex justify-content-center">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio3">
-            </div>
-        </div>
-    </div>
+        </th:block>
+    </form>
     <div class="row mt-5 d-flex justify-content-center">
-        <a class="widt btn btn-lg btn-primary" href="login.html" type="submit">Гласај</a>
+        <a class="widt btn btn-lg btn-primary" href="login.html" th type="submit">Гласај</a>
     </div>
 
 </div>

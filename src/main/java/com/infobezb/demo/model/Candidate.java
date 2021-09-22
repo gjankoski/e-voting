@@ -24,4 +24,20 @@ public class Candidate {
     String lastName;
 
     Long numberOfVotes;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public Long getNumberOfVotes() {
+        return numberOfVotes;
+    }
+
+    public void setNumberOfVotes(Long numberOfVotes) {
+        this.numberOfVotes = numberOfVotes;
+    }
 }
