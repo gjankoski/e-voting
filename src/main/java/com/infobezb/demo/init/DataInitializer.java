@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.mail.internet.MimeMessage;
+import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -53,17 +54,10 @@ public class DataInitializer {
         this.userService.register("Gjoko", "1234pass", "t.budoski@hotmail.com");
         this.userService.register("Teofil", "1234pass", "t.budoski@hotmail.com");
         this.userService.register("Bojan", "1234pass", "t.budoski@hotmail.com");
-        candidateRepository.save(new Candidate(1L, "try", "try", 10L));
-        candidateRepository.save(new Candidate(2L, "Try1", "try", 11L));
+        candidateRepository.save(new Candidate(1L, "Kandidat1", "try", 0L));
+        candidateRepository.save(new Candidate(2L, "Kandidat2", "try", 0L));
+        candidateRepository.save(new Candidate(3L, "Kandidat3", "try", 0L));
 
-        /*DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        LocalDateTime now = LocalDateTime.now();
-
-        LocalDateTime fiks = LocalDateTime.parse("22/09/2021 17:42");
-
-        if (now.isAfter(fiks)) {
-            System.out.println("hadbjadn asd");
-        }*/
 
        /* LocalDateTime date1 = LocalDateTime.now();
         LocalDateTime electionDate = LocalDateTime.of(2021, 9, 22, 10, 15, 45); //Da napisime soodvete datum XD
@@ -72,23 +66,25 @@ public class DataInitializer {
             sendEmailWithAttachment();
         }*/
 
+    }
 }
-
-   /* void sendEmailWithAttachment() throws MessagingException, IOException {
+/*
+    void sendEmailWithAttachment() throws MessagingException, IOException {
 
 
         MimeMessage msg = javaMailSender.createMimeMessage();
 
         MimeMessageHelper helper = new MimeMessageHelper(msg, true);
 
-        //helper.setTo("to_@email");
+        helper.setTo("t.budoski@hotmail.com");
 
-        //helper.setText("<h1>Check attachment for image!</h1>", true);
+        helper.setText("<h1>Check attachment for image!</h1>", true);
 
-        //FileSystemResource file = new FileSystemResource(new File("path/android.png"));
+        FileSystemResource file = new FileSystemResource(new File("path/android.png"));
         helper.addAttachment("Вашиот сертификат !", new ClassPathResource("cert")); // кај cert да се написит кој серификат се пуштат
 
-        javaMailSender.send(msg);
+        javaMailSender.sendMessageWith
 
-    }*/
+    }
 }
+ */

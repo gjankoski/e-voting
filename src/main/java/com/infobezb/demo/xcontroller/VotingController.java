@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 
 @Controller
@@ -40,9 +41,11 @@ public class VotingController {
         model.addAttribute("candidate",this.candidateRepository.findAll());
         return "vote";
     }
+
     @PostMapping
-    public String vote (@RequestParam String flexRadioDefault, Principal principal){
-        User korisnik = this.userRepository.findByUsername(principal.getName()).get();
+    public String vote (@RequestParam String flexRadioDefault, HttpServletRequest httpServletRequest){
+        User user = (User) httpServletRequest.getSession(true).getAttribute("user");
+        User korisnik = this.userRepository.findByUsername(user.getUsername()).get();
 
         if(!korisnik.getDidVote()){
             Candidate kandidat = this.candidateRepository.findById(Long.parseLong(flexRadioDefault)).get();

@@ -20,19 +20,20 @@
 <div class="container pt-5">
     <h3 mt-5> Изберете го вашиот кандидат </h3>
     <div class="row pt-5"></div>
-    <form class="row pt-5" action="/voting" method="POST">
+    <form class="row pt-5" th:action="@{/voting}" method="POST">
         <th:block th:each="c: ${candidate}">
             <div class="col-4">
                 <label th:text="${c.getFirstName()}"></label>
                 <div class="form-check d-flex justify-content-center">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio1" th:value="${c.getId()}">
+                    <input class="form-check-input" type="radio" th:name="flexRadioDefault" id="radio1" th:value="${c.getId()}">
                 </div>
             </div>
         </th:block>
+        <div class="row mt-5 d-flex justify-content-center">
+            <button class="widt btn btn-lg btn-primary" type="submit">Гласај</button>
+        </div>
     </form>
-    <div class="row mt-5 d-flex justify-content-center">
-        <a class="widt btn btn-lg btn-primary" href="/voting/voteSucc" type="submit">Гласај</a>
-    </div>
+
 
 </div>
 </body>
