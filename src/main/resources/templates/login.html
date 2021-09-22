@@ -74,6 +74,8 @@
 
 <main class="form-signin">
     <form method="post" action="/auth/login">
+    <form action="/voting" method="POST">
+
         <h1 class="h3 mb-3 fw-normal">Ве молиме најавете се</h1>
 
         <div class="form-floating">
@@ -90,8 +92,8 @@
                 <input type="checkbox" value="remember-me"> Запамети ме
             </label>
         </div>
-        <a class="w-100 btn btn-lg btn-primary" href="login" type="submit">Најави се</a>
-        <a href="Register">Нов корисник/Регистрирај се</a>
+        <a class="w-100 btn btn-lg btn-primary" href="/voting" type="submit">Најави се</a>
+    </form>
     </form>
 </main>
 

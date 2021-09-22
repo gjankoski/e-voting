@@ -11,6 +11,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 @Component
 public class DataInitializer {
@@ -32,6 +36,16 @@ public class DataInitializer {
         this.userService.register("Bojan", "1234pass", "t.budoski@hotmail.com");
         candidateRepository.save(new Candidate(1L, "try", "try", 10L));
         candidateRepository.save(new Candidate(2L, "Try1", "try", 11L));
+
+        /*DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        LocalDateTime now = LocalDateTime.now();
+
+        LocalDateTime fiks = LocalDateTime.parse("22/09/2021 17:42");
+
+        if (now.isAfter(fiks)) {
+            System.out.println("hadbjadn asd");
+        }*/
+
     }
 
 }
