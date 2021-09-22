@@ -73,7 +73,7 @@
 <body class="text-center">
 
 <main class="form-signin">
-    <form>
+    <form method="post" action="/auth/login">
         <h1 class="h3 mb-3 fw-normal">Ве молиме најавете се</h1>
 
         <div class="form-floating">
@@ -90,7 +90,7 @@
                 <input type="checkbox" value="remember-me"> Запамети ме
             </label>
         </div>
-        <a class="w-100 btn btn-lg btn-primary" th:href="login" type="submit">Најави се</a>
+        <a class="w-100 btn btn-lg btn-primary" href="login" type="submit">Најави се</a>
         <a href="Register">Нов корисник/Регистрирај се</a>
     </form>
 </main>

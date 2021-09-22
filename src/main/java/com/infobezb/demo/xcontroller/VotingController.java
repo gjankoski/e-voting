@@ -55,6 +55,6 @@ public class VotingController {
         if(korisnik.getDidVote()){
             return "redirect:/voting/backOnLogin";
         }
-        return "redirect:/";
+        return "redirect:/voting/backOnLogin";
     }
 }
