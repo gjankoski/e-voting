@@ -41,11 +41,11 @@ public class VotingController {
         return "vote";
     }
     @PostMapping
-    public String vote (@RequestParam String glas, Principal principal){
+    public String vote (@RequestParam String flexRadioDefault, Principal principal){
         User korisnik = this.userRepository.findByUsername(principal.getName()).get();
 
         if(!korisnik.getDidVote()){
-            Candidate kandidat = this.candidateRepository.findById(Long.parseLong(glas)).get();
+            Candidate kandidat = this.candidateRepository.findById(Long.parseLong(flexRadioDefault)).get();
             kandidat.setNumberOfVotes(kandidat.getNumberOfVotes()+1);
             this.candidateRepository.save(kandidat);
             korisnik.setDidVote(true);

@@ -65,16 +65,16 @@ public class DataInitializer {
             System.out.println("hadbjadn asd");
         }*/
 
-        LocalDateTime date1 = LocalDateTime.now();
+       /* LocalDateTime date1 = LocalDateTime.now();
         LocalDateTime electionDate = LocalDateTime.of(2021, 9, 22, 10, 15, 45); //Da napisime soodvete datum XD
 
         if(date1.isAfter(electionDate)) {
             sendEmailWithAttachment();
-        }
+        }*/
 
 }
 
-    void sendEmailWithAttachment() throws MessagingException, IOException {
+   /* void sendEmailWithAttachment() throws MessagingException, IOException {
 
 
         MimeMessage msg = javaMailSender.createMimeMessage();
@@ -90,5 +90,5 @@ public class DataInitializer {
 
         javaMailSender.send(msg);
 
-    }
+    }*/
 }
