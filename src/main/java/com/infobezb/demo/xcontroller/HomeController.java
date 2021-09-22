@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
+import java.util.Optional;
 
 @Controller
 public class HomeController {
@@ -33,16 +34,22 @@ public class HomeController {
     }
 
     @PostMapping
-    public String vote (@RequestParam String userName, @RequestParam String password, @RequestParam String OTP, HttpServletRequest request){
+    public String vote (@RequestParam String userName, @RequestParam String password, HttpServletRequest request){
         User user = null;
             user = this.authService.login(request.getParameter("userName"),
                     request.getParameter("password"));
             request.getSession(true).setAttribute("user", user);
-        User korisnik = this.userRepository.findByUsername(userName).get();
+        Optional<User> korisnik = this.userRepository.findByUsername(userName);
 
-        if (!korisnik.getDidVote()){
-            return "redirect:/voting";
+        if (korisnik.isEmpty())
+        {
+            return "redirect:/auth/login";
         }
-        return "redirect:/auth/login";
+        else {
+            if (!korisnik.get().getDidVote()) {
+                return "redirect:/voting";
+            }
+            return "redirect:/auth/login";
+        }
     }
 }

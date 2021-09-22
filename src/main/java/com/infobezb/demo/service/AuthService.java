@@ -17,7 +17,7 @@ public class AuthService{
         if (username==null || username.isEmpty() || password==null || password.isEmpty()) {
             throw new RuntimeException();
         }
-        return userRepository.findByUsername(username).orElseThrow(RuntimeException::new);
+        return userRepository.findByUsername(username).orElse(null);
     }
 
 }
