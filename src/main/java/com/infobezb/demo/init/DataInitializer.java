@@ -61,7 +61,7 @@ public class DataInitializer {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.office365.com");
         mailSender.setPort(587);
-        mailSender.setUsername("eglasanje2021@outlook.com");
+        mailSender.setUsername("eglasanje21@outlook.com");
         mailSender.setPassword("infobezb21");
 
         Properties props = mailSender.getJavaMailProperties();
@@ -71,33 +71,34 @@ public class DataInitializer {
         props.put("mail.debug", "true");
 
 
-
         MimeMessage message = mailSender.createMimeMessage();
 
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
-        helper.setFrom("eglasanje2021@outlook.com");
-        helper.setTo("t.budoski@hotmail.com");
+        helper.setFrom("eglasanje21@outlook.com");
+        helper.setTo("gjanko11@gmail.com");
 
         helper.setSubject("Сертификат и детали за гласање");
-        helper.setText("UserName: \"Teofil\"              Password: \"1234pass\" <br> Најпрво документот се зачувува со екстензија \".crt\". Во прелистувачот се внесува сертификатот откако ќе се извршат следните чекори. 1 чекор - во url се пишува \"about:preferences\". 2 чекор - Во полето за пребарување пишувате \"certificates\". 3 чекор - Притискате на \"View Certificates\". 4. чекор - Во делот \"Your Certificates\" го внесувате претходно спуштениот сертификат");
+        helper.setText("UserName: \"Gjoko\"              Password: \"1234pass\"              Password for certificate: \"infobezb\"       Најпрво документот се зачувува со екстензија \".crt\". Во прелистувачот се внесува сертификатот откако ќе се извршат следните чекори. 1 чекор - во url се пишува \"about:preferences\". 2 чекор - Во полето за пребарување пишувате \"certificates\". 3 чекор - Притискате на \"View Certificates\". 4. чекор - Во делот \"Your Certificates\" го внесувате претходно спуштениот сертификат");
 
         FileSystemResource file
                 = new FileSystemResource(new File("C:\\Users\\Ljubco\\Desktop\\FINKI\\Bezbednost\\certificates\\clientBob.crt"));
         helper.addAttachment("Certificates", file);
         mailSender.send(message);
 
+        helper.setText("UserName: \"Teofil\"               Password: \"1234pass\"            Password for certificate: \"infobezb\"        Најпрво документот се зачувува со екстензија \".crt\". Во прелистувачот се внесува сертификатот откако ќе се извршат следните чекори. 1 чекор - во url се пишува \"about:preferences\". 2 чекор - Во полето за пребарување пишувате \"certificates\". 3 чекор - Притискате на \"View Certificates\". 4. чекор - Во делот \"Your Certificates\" го внесувате претходно спуштениот сертификат");
+        helper.setTo("t.budoski@hotmail.com.com");
+        mailSender.send(message);
+
         helper.setTo("vladimir.j008@gmail.com");
-        helper.setText("UserName: \"Vladimir\"            Password: \"1234pass\"             Најпрво документот се зачувува со екстензија \".crt\". Во прелистувачот се внесува сертификатот откако ќе се извршат следните чекори. 1 чекор - во url се пишува \"about:preferences\". 2 чекор - Во полето за пребарување пишувате \"certificates\". 3 чекор - Притискате на \"View Certificates\". 4. чекор - Во делот \"Your Certificates\" го внесувате претходно спуштениот сертификат");
+        helper.setText("UserName: \"Vladimir\"            Password: \"1234pass\"             Password for certificate: \"infobezb\"        Најпрво документот се зачувува со екстензија \".crt\". Во прелистувачот се внесува сертификатот откако ќе се извршат следните чекори. 1 чекор - во url се пишува \"about:preferences\". 2 чекор - Во полето за пребарување пишувате \"certificates\". 3 чекор - Притискате на \"View Certificates\". 4. чекор - Во делот \"Your Certificates\" го внесувате претходно спуштениот сертификат");
         mailSender.send(message);
 
         helper.setTo("bgavreski@gmail.com");
-        helper.setText("UserName: \"Bojan\"               Password: \"1234pass\"             Најпрво документот се зачувува со екстензија \".crt\". Во прелистувачот се внесува сертификатот откако ќе се извршат следните чекори. 1 чекор - во url се пишува \"about:preferences\". 2 чекор - Во полето за пребарување пишувате \"certificates\". 3 чекор - Притискате на \"View Certificates\". 4. чекор - Во делот \"Your Certificates\" го внесувате претходно спуштениот сертификат");
+        helper.setText("UserName: \"Bojan\"               Password: \"1234pass\"             Password for certificate: \"infobezb\"         Најпрво документот се зачувува со екстензија \".crt\". Во прелистувачот се внесува сертификатот откако ќе се извршат следните чекори. 1 чекор - во url се пишува \"about:preferences\". 2 чекор - Во полето за пребарување пишувате \"certificates\". 3 чекор - Притискате на \"View Certificates\". 4. чекор - Во делот \"Your Certificates\" го внесувате претходно спуштениот сертификат");
         mailSender.send(message);
 
-        helper.setText("UserName: \"Gjoko\"               Password: \"1234pass\"             Најпрво документот се зачувува со екстензија \".crt\". Во прелистувачот се внесува сертификатот откако ќе се извршат следните чекори. 1 чекор - во url се пишува \"about:preferences\". 2 чекор - Во полето за пребарување пишувате \"certificates\". 3 чекор - Притискате на \"View Certificates\". 4. чекор - Во делот \"Your Certificates\" го внесувате претходно спуштениот сертификат");
-        helper.setTo("gjanko11@gmail.com");
-        mailSender.send(message);
+
 
     }
 }
